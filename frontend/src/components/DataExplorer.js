@@ -234,6 +234,10 @@ const DataExplorer = () => {
     { value: 'doughnut', label: 'Doughnut', icon: '🍩' }
   ];
 
+  if (showLoader) {
+    return <DataExplorerLoader />;
+  }
+
   if (loading && !selectedDataset) {
     return (
       <div className="min-h-screen bg-slate-900 p-4 md:p-6 lg:p-8 flex items-center justify-center">
