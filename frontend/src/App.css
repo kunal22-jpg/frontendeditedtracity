@@ -430,11 +430,13 @@ body {
 
 /* Custom fonts for TRACITY */
 .tracity-font {
-  font-family: 'Tanker', 'Inter', sans-serif;
+  font-family: 'Orbitron', 'Inter', monospace;
+  font-weight: 700;
 }
 
 .mera-pro-font {
   font-family: 'Merriweather', 'Georgia', serif;
+  font-weight: 900;
 }
 
 /* Blur text animation from reactbits style */
