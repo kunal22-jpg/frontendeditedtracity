@@ -7,6 +7,7 @@ const TracityDashboard = ({ stats }) => {
   const [showChat, setShowChat] = useState(false);
   const [datasets, setDatasets] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchDatasets();
