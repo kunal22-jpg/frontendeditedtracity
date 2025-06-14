@@ -136,7 +136,7 @@ const TracityDashboard = ({ stats }) => {
                 className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/explorer'}
+                onClick={handleNavigateToExplorer}
               >
                 Start Exploring Data
               </motion.button>
