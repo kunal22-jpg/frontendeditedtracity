@@ -204,7 +204,7 @@ const ChatPopup = ({ onClose }) => {
         {/* Subtle gradient animation overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 animate-pulse opacity-50 pointer-events-none"></div>
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-b border-purple-500/30 p-4 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-b border-purple-500/30 p-4 flex items-center justify-between relative z-10">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
               <span className="text-white text-lg">🤖</span>
