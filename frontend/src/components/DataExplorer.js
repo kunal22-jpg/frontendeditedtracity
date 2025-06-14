@@ -238,22 +238,6 @@ const DataExplorer = () => {
     return <DataExplorerLoader />;
   }
 
-  if (loading && !selectedDataset) {
-    return (
-      <div className="min-h-screen bg-slate-900 p-4 md:p-6 lg:p-8 flex items-center justify-center">
-        <div className="text-center">
-          <div className="cosmic-orb mb-8"></div>
-          <h2 className="text-2xl font-semibold mb-4">Loading Data Explorer...</h2>
-          <div className="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-slate-900 p-4 md:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
