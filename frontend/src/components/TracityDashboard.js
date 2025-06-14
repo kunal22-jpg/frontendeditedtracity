@@ -217,29 +217,7 @@ const TracityDashboard = ({ stats }) => {
                 <div className="absolute -inset-6 rounded-full border border-pink-400/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
               </motion.div>
 
-              {/* Data Visualization Preview */}
-              <motion.div
-                className="absolute -bottom-8 -right-8 bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl p-4 w-64"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.5, duration: 0.8 }}
-              >
-                <div className="text-sm text-slate-300 mb-2">Live Stats</div>
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Datasets</span>
-                    <span className="text-purple-400 font-semibold">{stats.total_datasets}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Visualizations</span>
-                    <span className="text-blue-400 font-semibold">{Math.round(stats.total_visualizations / 1000)}K</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-slate-400">Users</span>
-                    <span className="text-cyan-400 font-semibold">{Math.round(stats.total_users / 1000)}K</span>
-                  </div>
-                </div>
-              </motion.div>
+              {/* Data Visualization Preview - REMOVED */}
             </div>
           </motion.div>
         </div>
