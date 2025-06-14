@@ -500,8 +500,8 @@ body {
 
 /* Invisible circle for AI chat trigger */
 .invisible-circle {
-  width: 100px;
-  height: 100px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   position: absolute;
   background: transparent;
