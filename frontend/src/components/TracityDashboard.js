@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import TracityGlobe from './TracityGlobe';
 import ChatPopup from './ChatPopup';
-import TracityStatCard from './TracityStatCard';
-import TracityFeatureCard from './TracityFeatureCard';
 
 const TracityDashboard = ({ stats }) => {
   const [showChat, setShowChat] = useState(false);
@@ -28,7 +25,7 @@ const TracityDashboard = ({ stats }) => {
     }
   };
 
-  const handleGlobeClick = () => {
+  const handleChatTrigger = () => {
     setShowChat(true);
   };
 
@@ -42,7 +39,7 @@ const TracityDashboard = ({ stats }) => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.1
+        staggerChildren: 0.2
       }
     }
   };
@@ -61,20 +58,23 @@ const TracityDashboard = ({ stats }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 p-4 md:p-6 lg:p-8 relative">
       <motion.div
-        className="max-w-7xl mx-auto"
+        className="max-w-7xl mx-auto h-screen flex flex-col"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
+        <motion.div 
+          variants={itemVariants} 
+          className="text-center mb-12"
+        >
+          <div className="flex items-center justify-center mb-6">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
               <span className="text-2xl">⚡</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text">
+            <h1 className="text-5xl md:text-7xl font-bold gradient-text tracity-font">
               TRACITY
             </h1>
           </div>
@@ -83,146 +83,163 @@ const TracityDashboard = ({ stats }) => {
           </p>
         </motion.div>
 
-        {/* Main Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-4 mb-8">
+        {/* Main Content Area */}
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           
-          {/* Effortless Data Perfection Card - Top Left */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 xl:col-span-2">
-            <TracityFeatureCard
-              title="Effortless Data Perfection"
-              subtitle="14 days trial"
-              description="after • $5/month"
-              icon="🎯"
-              color="dark"
-              size="large"
-            />
-          </motion.div>
-
-          {/* Central Globe - Spans center area */}
+          {/* Left Section - Headline */}
           <motion.div 
             variants={itemVariants}
-            className="lg:col-span-2 xl:col-span-2 lg:row-span-2 flex items-center justify-center relative"
+            className="flex flex-col justify-center space-y-8"
           >
-            <div className="bento-card h-full w-full flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-600/10 via-blue-600/10 to-pink-600/10 border-purple-500/30">
-              <TracityGlobe onClick={handleGlobeClick} />
-              <motion.div 
-                className="text-center mt-6 relative z-10"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            <div className="text-left">
+              <motion.h2 
+                className="text-6xl md:text-7xl lg:text-8xl font-bold mera-pro-font text-white leading-tight blur-text"
+                initial={{ filter: "blur(20px)", opacity: 0, y: 20 }}
+                animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                transition={{ duration: 2, ease: "easeOut" }}
               >
-                <h2 className="text-2xl font-bold gradient-text mb-2">
-                  Your AI Data
-                </h2>
-                <h2 className="text-2xl font-bold gradient-text mb-2">
-                  Companion
-                </h2>
-              </motion.div>
+                Visualise The Mess,
+              </motion.h2>
+              <motion.h2 
+                className="text-6xl md:text-7xl lg:text-8xl font-bold mera-pro-font gradient-text leading-tight blur-text"
+                initial={{ filter: "blur(20px)", opacity: 0, y: 20 }}
+                animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+              >
+                Realise The Insights.
+              </motion.h2>
             </div>
-          </motion.div>
+            
+            {/* Subtitle */}
+            <motion.p 
+              className="text-xl text-slate-300 max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+            >
+              Transform complex data into actionable insights with our AI-powered analytics platform designed for Indian states.
+            </motion.p>
 
-          {/* User Stats Card - Top Right */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 xl:col-span-2">
-            <TracityStatCard
-              title="25M"
-              subtitle="created insights"
-              value={`${Math.round(stats.total_visualizations / 1000)}K`}
-              description="visualizations generated"
-              icon="📊"
-              color="orange"
-            />
-          </motion.div>
-
-          {/* Happy Users Card - Left */}
-          <motion.div variants={itemVariants} className="lg:col-span-1 xl:col-span-1">
-            <TracityStatCard
-              title="12K"
-              subtitle="happy users"
-              value={`${Math.round(stats.total_users / 1000)}K`}
-              description="data explorers"
-              showUserAvatars={true}
-              color="slate"
-            />
-          </motion.div>
-
-          {/* Generate Button Card - Left */}
-          <motion.div variants={itemVariants} className="lg:col-span-1 xl:col-span-1">
-            <div className="bento-card h-full flex items-center justify-center bg-gradient-to-br from-purple-600/80 to-blue-600/80 border-purple-500/50 hover:border-purple-400/70 cursor-pointer group">
-              <motion.div 
-                className="text-center"
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.2 }}
+            >
+              <motion.button 
+                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-white/30 transition-all">
-                  <span className="text-3xl">⚡</span>
+                Start Exploring Data
+              </motion.button>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Section - Interactive Area */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex justify-center items-center relative"
+          >
+            {/* Invisible Circle for Chat Trigger */}
+            <div 
+              className="invisible-circle"
+              onClick={handleChatTrigger}
+              style={{
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <div className="chat-popup-hint">
+                Try clicking me
+              </div>
+            </div>
+
+            {/* Background Cosmic Effects */}
+            <div className="relative">
+              {/* Floating Particles */}
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
+                  style={{
+                    top: `${20 + i * 15}%`,
+                    left: `${15 + i * 10}%`,
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.3, 1, 0.3],
+                    scale: [1, 1.5, 1],
+                  }}
+                  transition={{
+                    duration: 3 + i * 0.5,
+                    repeat: Infinity,
+                    delay: i * 0.3,
+                  }}
+                />
+              ))}
+
+              {/* Central Cosmic Orb */}
+              <motion.div
+                className="w-80 h-80 rounded-full relative"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 50,
+                  damping: 10,
+                  delay: 0.5
+                }}
+              >
+                {/* Outer Ring */}
+                <div className="absolute inset-0 rounded-full bg-gradient-conic from-purple-600 via-blue-600 via-pink-600 to-purple-600 animate-spin-slow opacity-30"></div>
+                
+                {/* Middle Ring */}
+                <div className="absolute inset-4 rounded-full bg-gradient-conic from-blue-500 via-purple-500 via-pink-500 to-blue-500 animate-spin-slow opacity-50" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
+                
+                {/* Inner Core */}
+                <div className="absolute inset-8 rounded-full bg-gradient-radial from-white/20 via-purple-900/80 to-slate-900 backdrop-blur-sm">
+                  {/* Swirling Patterns */}
+                  <div className="absolute inset-0 rounded-full overflow-hidden">
+                    <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-cyan-400/40 to-blue-600/40 rounded-full blur-lg animate-pulse"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-gradient-to-br from-pink-400/40 to-purple-600/40 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-gradient-to-br from-orange-400/40 to-yellow-500/40 rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }}></div>
+                  </div>
+
+                  {/* Center Glow */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-radial from-white/60 to-transparent rounded-full animate-pulse"></div>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Generate</h3>
+
+                {/* Outer Glow Rings */}
+                <div className="absolute -inset-2 rounded-full border border-purple-400/20 animate-pulse"></div>
+                <div className="absolute -inset-4 rounded-full border border-blue-400/15 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute -inset-6 rounded-full border border-pink-400/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
               </motion.div>
-            </div>
-          </motion.div>
 
-          {/* Branching Paths Card - Right */}
-          <motion.div variants={itemVariants} className="lg:col-span-1 xl:col-span-1">
-            <TracityFeatureCard
-              title="Branching paths"
-              description="Explore multiple data directions with branching"
-              icon="🌿"
-              color="blue"
-              size="small"
-            />
-          </motion.div>
-
-          {/* Keyword Enhancer Card - Right */}
-          <motion.div variants={itemVariants} className="lg:col-span-1 xl:col-span-1">
-            <TracityFeatureCard
-              title="Keyword enhancer"
-              description="Boost your data precision with keywords"
-              icon="🔍"
-              color="pink"
-              size="small"
-            />
-          </motion.div>
-
-          {/* Data Templates Card - Bottom Left */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 xl:col-span-2">
-            <div className="bento-card h-full bg-slate-800/50 border-slate-600/30">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-semibold text-white">Data templates</h3>
-                <span className="text-2xl">📁</span>
-              </div>
-              <p className="text-sm text-slate-400 mb-4">
-                Use pre-made templates to jumpstart creativity
-              </p>
-              <div className="flex items-center space-x-2">
-                <div className="bg-blue-600/20 text-blue-300 px-3 py-2 rounded-lg text-sm font-medium">
-                  14 days trial
+              {/* Data Visualization Preview */}
+              <motion.div
+                className="absolute -bottom-8 -right-8 bg-slate-800/50 backdrop-blur-sm border border-purple-500/30 rounded-xl p-4 w-64"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+              >
+                <div className="text-sm text-slate-300 mb-2">Live Stats</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-slate-400">Datasets</span>
+                    <span className="text-purple-400 font-semibold">{stats.total_datasets}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-slate-400">Visualizations</span>
+                    <span className="text-blue-400 font-semibold">{Math.round(stats.total_visualizations / 1000)}K</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-slate-400">Users</span>
+                    <span className="text-cyan-400 font-semibold">{Math.round(stats.total_users / 1000)}K</span>
+                  </div>
                 </div>
-                <div className="flex -space-x-1">
-                  {[...Array(5)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 border-2 border-slate-800"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Bottom Stats Row */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 xl:col-span-2">
-            <div className="grid grid-cols-2 gap-4 h-full">
-              <div className="bento-card text-center bg-slate-800/30 border-slate-600/30">
-                <div className="text-2xl font-bold text-cyan-400 pulse-glow">
-                  {stats.total_datasets}
-                </div>
-                <div className="text-sm text-slate-400">Active Datasets</div>
-              </div>
-              <div className="bento-card text-center bg-slate-800/30 border-slate-600/30">
-                <div className="text-2xl font-bold text-green-400 pulse-glow">
-                  99.2%
-                </div>
-                <div className="text-sm text-slate-400">Accuracy Rate</div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
