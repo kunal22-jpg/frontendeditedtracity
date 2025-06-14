@@ -9,6 +9,7 @@ const DataExplorer = () => {
   const [visualizationData, setVisualizationData] = useState(null);
   const [insights, setInsights] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showLoader, setShowLoader] = useState(true);
   const [chartType, setChartType] = useState('bar');
   
   // New state for filtering
