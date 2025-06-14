@@ -24,7 +24,7 @@ const TracityNavbar = () => {
             <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">⚡</span>
             </div>
-            <span className="text-2xl font-bold gradient-text">TRACITY</span>
+            <span className="text-2xl font-bold gradient-text tracity-font">TRACITY</span>
           </Link>
 
           {/* Desktop Navigation */}
