@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 const TracityNavbar = () => {
   const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { path: '/', label: 'Dashboard', icon: '🏠' },
