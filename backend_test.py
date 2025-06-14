@@ -85,7 +85,7 @@ class TestTRACITYAPI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Get the backend URL from the environment variable
-        cls.base_url = "https://7e716e97-a13a-45a7-864e-978a794e1ad8.preview.emergentagent.com/api"
+        cls.base_url = "https://500f0e08-094e-43ca-a3a6-af1c88e3be28.preview.emergentagent.com/api"
         cls.tester = TRACITYAPITester(cls.base_url)
         print(f"Testing API at: {cls.base_url}")
         
