@@ -151,7 +151,7 @@ const TracityDashboard = ({ stats }) => {
             {/* Invisible Circle for Chat Trigger */}
             <div 
               className="invisible-circle"
-              onClick={handleNavigateToExplorer}
+              onClick={handleChatTrigger}
               style={{
                 top: '50%',
                 left: '50%',
