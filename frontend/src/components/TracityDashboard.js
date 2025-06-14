@@ -27,8 +27,8 @@ const TracityDashboard = ({ stats }) => {
     }
   };
 
-  const handleChatTrigger = () => {
-    setShowChat(true);
+  const handleNavigateToExplorer = () => {
+    navigate('/explorer');
   };
 
   const handleCloseChat = () => {
