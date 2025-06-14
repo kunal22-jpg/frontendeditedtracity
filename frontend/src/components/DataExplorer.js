@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ChartComponent from './ChartComponent';
+import DataExplorerLoader from './DataExplorerLoader';
 
 const DataExplorer = () => {
   const [datasets, setDatasets] = useState([]);
