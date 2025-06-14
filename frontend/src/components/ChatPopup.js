@@ -225,7 +225,7 @@ const ChatPopup = ({ onClose }) => {
         </div>
 
         {/* Chat Content Area */}
-        <div className="flex-1 overflow-hidden relative">
+        <div className="flex-1 overflow-hidden relative z-10">
           {/* TRACITY Loading Animation */}
           <AnimatePresence>
             {isLoading && (
