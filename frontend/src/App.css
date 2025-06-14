@@ -430,17 +430,18 @@ body {
   }
 }
 
-/* Custom fonts for TRACITY - Using closest alternatives to requested fonts */
+/* Custom fonts for TRACITY - Using closest alternatives to Tan Kulture and Mera Pro */
 .tracity-font {
-  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  font-family: 'Anton', 'Oswald', sans-serif;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .mera-pro-font {
-  font-family: 'Space Grotesk', 'Helvetica Neue', sans-serif;
-  font-weight: 700;
+  font-family: 'Archivo Black', 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.5px;
 }
 
 /* Blur text animation from reactbits style */
