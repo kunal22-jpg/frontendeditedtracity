@@ -456,8 +456,6 @@ async def generate_specific_response(data: List[Dict], query_info: Dict) -> str:
             response += f"• **Minimum Consumption**: {min_consumption}\n"
             response += f"• **Records Analyzed**: {len(data)}\n"
     
-    response += f"\n💡 **Tip**: Ask me to compare with other states or years for deeper insights!"
-    
     return response
 async def get_openai_insight(data_sample: List[Dict], query: str) -> Dict[str, Any]:
     """Generate AI insights using OpenAI"""
