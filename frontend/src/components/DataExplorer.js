@@ -24,7 +24,13 @@ const DataExplorer = () => {
   const [isFiltering, setIsFiltering] = useState(false);
 
   useEffect(() => {
-    fetchDatasets();
+    // Show the immersive loader for 6 seconds, then load data
+    const loaderTimer = setTimeout(() => {
+      setShowLoader(false);
+      fetchDatasets();
+    }, 6000);
+
+    return () => clearTimeout(loaderTimer);
   }, []);
 
   useEffect(() => {
