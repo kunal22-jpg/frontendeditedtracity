@@ -37,14 +37,17 @@ const DataExplorer = () => {
       if (response.ok) {
         const data = await response.json();
         
-        // Reorder datasets: User Profiles → Status → Datasets → Crimes → Power → AQI → Literacy
-        const datasetOrder = ['user_profiles', 'status_checks', 'datasets', 'crimes', 'power_consumption', 'aqi', 'literacy'];
+        // Reorder datasets: Crimes → Power → AQI → Literacy (removed user_profiles, status_checks, datasets)
+        const datasetOrder = ['crimes', 'power_consumption', 'aqi', 'literacy'];
         const orderedDatasets = datasetOrder.map(collection => 
           data.find(d => d.collection === collection)
         ).filter(Boolean);
         
-        // Add any remaining datasets not in the predefined order
-        const remainingDatasets = data.filter(d => !datasetOrder.includes(d.collection));
+        // Add any remaining datasets not in the predefined order, excluding the unwanted ones
+        const excludedCollections = ['user_profiles', 'status_checks', 'datasets'];
+        const remainingDatasets = data.filter(d => 
+          !datasetOrder.includes(d.collection) && !excludedCollections.includes(d.collection)
+        );
         const finalDatasets = [...orderedDatasets, ...remainingDatasets];
         
         setDatasets(finalDatasets);
