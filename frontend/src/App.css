@@ -4,6 +4,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
+/* 
+  TO USE ACTUAL TAN KULTURE AND MERA PRO FONTS:
+  1. Download Tan Kulture font files and place them in /public/fonts/
+  2. Download Mera Pro font files and place them in /public/fonts/
+  3. Uncomment the @font-face declarations below and update the file paths
+*/
+
+/*
+@font-face {
+  font-family: 'Tan Kulture';
+  src: url('/fonts/TanKulture-Regular.woff2') format('woff2'),
+       url('/fonts/TanKulture-Regular.woff') format('woff'),
+       url('/fonts/TanKulture-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mera Pro';
+  src: url('/fonts/MeraPro-Bold.woff2') format('woff2'),
+       url('/fonts/MeraPro-Bold.woff') format('woff'),
+       url('/fonts/MeraPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
 * {
   box-sizing: border-box;
 }
