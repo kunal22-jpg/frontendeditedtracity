@@ -61,38 +61,7 @@ const TracityNavbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800/80 backdrop-blur-md">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
-                  location.pathname === item.path
-                    ? 'bg-gradient-to-r from-purple-600/30 to-blue-600/30 text-white border border-purple-500/50'
-                    : 'text-slate-300 hover:text-white hover:bg-purple-600/10'
-                }`}
-              >
-                <span className="mr-2">{item.icon}</span>
-                {item.label}
-              </Link>
-            ))}
-            <div className="px-4 py-2">
-              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200">
-                Get Started
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      )}
+
     </motion.nav>
   );
 };
