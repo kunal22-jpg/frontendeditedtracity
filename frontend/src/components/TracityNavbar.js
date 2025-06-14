@@ -39,35 +39,24 @@ const TracityNavbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-xl text-slate-400 hover:text-white hover:bg-purple-600/20 focus:outline-none border border-transparent hover:border-purple-500/30"
-            >
-              <svg
-                className="h-6 w-6"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
+          {/* Mobile Navigation */}
+          <div className="md:hidden w-full flex justify-center">
+            <div className="flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    location.pathname === item.path
+                      ? 'bg-gradient-to-r from-purple-600/30 to-blue-600/30 text-white border border-purple-500/50'
+                      : 'text-slate-300 hover:text-white hover:bg-purple-600/10 hover:border hover:border-purple-500/30'
+                  }`}
+                >
+                  <span className="mr-1 text-xs">{item.icon}</span>
+                  <span className="text-xs">{item.label}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
