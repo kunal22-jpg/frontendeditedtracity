@@ -369,6 +369,9 @@ frontend:
       - working: true
         agent: "testing"
         comment: "The TracityNavbar component works correctly. It displays the TRACITY branding, shows the correct navigation links, and is responsive on mobile devices. The navigation between Dashboard and Data Explorer works as expected."
+      - working: true
+        agent: "testing"
+        comment: "Verified the UI changes to the navbar. The TRACITY logo has been removed from the top left as requested. The 'Get Started' button has been removed from the top right. The Dashboard and Data Explorer navigation items are now properly centered in the navbar. The centering works correctly on both desktop and mobile views. Navigation between pages works properly. The navbar maintains its proper styling and animations."
 
   - task: "Responsive Design Implementation"
     implemented: true
