@@ -164,33 +164,7 @@ const TracityDashboard = ({ stats }) => {
             </div>
 
             {/* Background Cosmic Effects - REMOVED */}
-            <div className="relative">
-              {/* Floating Particles */}
-              {[...Array(8)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"
-                  style={{
-                    top: `${20 + i * 15}%`,
-                    left: `${15 + i * 10}%`,
-                  }}
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.3, 1, 0.3],
-                    scale: [1, 1.5, 1],
-                  }}
-                  transition={{
-                    duration: 3 + i * 0.5,
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                  }}
-                />
-              ))}
 
-
-
-              {/* Data Visualization Preview - REMOVED */}
-            </div>
           </motion.div>
         </div>
       </motion.div>
