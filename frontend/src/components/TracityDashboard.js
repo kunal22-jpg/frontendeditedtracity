@@ -163,7 +163,7 @@ const TracityDashboard = ({ stats }) => {
               </div>
             </div>
 
-            {/* Background Cosmic Effects */}
+            {/* Background Cosmic Effects - REMOVED */}
             <div className="relative">
               {/* Floating Particles */}
               {[...Array(8)].map((_, i) => (
