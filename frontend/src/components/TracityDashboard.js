@@ -84,9 +84,6 @@ const TracityDashboard = ({ stats }) => {
               TRACITY
             </h1>
           </div>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Your AI Data Companion
-          </p>
         </motion.div>
 
         {/* Main Content Area */}
