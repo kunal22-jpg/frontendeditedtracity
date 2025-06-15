@@ -187,42 +187,7 @@ const TracityDashboard = ({ stats }) => {
                 />
               ))}
 
-              {/* Central Cosmic Orb */}
-              <motion.div
-                className="w-80 h-80 rounded-full relative"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 50,
-                  damping: 10,
-                  delay: 0.5
-                }}
-              >
-                {/* Outer Ring */}
-                <div className="absolute inset-0 rounded-full bg-gradient-conic from-purple-600 via-blue-600 via-pink-600 to-purple-600 animate-spin-slow opacity-30"></div>
-                
-                {/* Middle Ring */}
-                <div className="absolute inset-4 rounded-full bg-gradient-conic from-blue-500 via-purple-500 via-pink-500 to-blue-500 animate-spin-slow opacity-50" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-                
-                {/* Inner Core */}
-                <div className="absolute inset-8 rounded-full bg-gradient-radial from-white/20 via-purple-900/80 to-slate-900 backdrop-blur-sm">
-                  {/* Swirling Patterns */}
-                  <div className="absolute inset-0 rounded-full overflow-hidden">
-                    <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-cyan-400/40 to-blue-600/40 rounded-full blur-lg animate-pulse"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-12 h-12 bg-gradient-to-br from-pink-400/40 to-purple-600/40 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
-                    <div className="absolute top-1/2 right-1/3 w-8 h-8 bg-gradient-to-br from-orange-400/40 to-yellow-500/40 rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }}></div>
-                  </div>
 
-                  {/* Center Glow */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-radial from-white/60 to-transparent rounded-full animate-pulse"></div>
-                </div>
-
-                {/* Outer Glow Rings */}
-                <div className="absolute -inset-2 rounded-full border border-purple-400/20 animate-pulse"></div>
-                <div className="absolute -inset-4 rounded-full border border-blue-400/15 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute -inset-6 rounded-full border border-pink-400/10 animate-pulse" style={{ animationDelay: '1s' }}></div>
-              </motion.div>
 
               {/* Data Visualization Preview - REMOVED */}
             </div>
