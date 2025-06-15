@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Enhanced Data Explorer with multi-state filtering, advanced AI insights, and proper visualization for all Indian states. The original issue was that data explorer only showed data for Andhra Pradesh instead of all states. Added comprehensive filtering by states, years, crime types, sorting options, and enhanced AI insights with web research capabilities."
+user_problem_statement: "Enhanced Data Explorer with multi-state filtering, advanced AI insights, and proper visualization for all Indian states. The original issue was that data explorer only showed data for Andhra Pradesh instead of all states. Added comprehensive filtering by states, years, crime types, sorting options, and enhanced AI insights with web research capabilities. Latest task: Remove the floating orb from dashboard while keeping the invisible circle that opens AI chatbot."
 
 backend:
   - task: "API Branding Updates"
