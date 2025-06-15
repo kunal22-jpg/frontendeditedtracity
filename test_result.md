@@ -411,16 +411,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Enhanced API endpoints for filtered data retrieval"
-    - "New API endpoints for metadata and filtered data"
-    - "Enhanced DataExplorer component with advanced filtering"
-    - "Advanced filtering UI with multi-select capabilities"
-    - "Enhanced visualization display for all states"
-    - "API Branding Updates"
-    - "MongoDB Collection Integration"
+    - "Invisible Circle Functionality"
   stuck_tasks:
     - "Backend API connection issues"
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
